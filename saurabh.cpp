@@ -131,8 +131,8 @@ void shopping::list(){
 
 int main(){
 
-    cout<<"change this code";
-
-
+    shopping s;
+    s.menu();
+    
     return 0;
 }
