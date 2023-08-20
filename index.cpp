@@ -38,7 +38,7 @@ void shopping :: menu(){
     cout<<"\t\t\t\t\t|                     |\n";
     cout<<"\t\t\t\t\t|  3. Exit            |\n";
     cout<<"\t\t\t\t\t|                     |\n";
-    cout<<"\n\t\t\t  Please Select (Select 1 or 2 or 3)";
+    cout<<"\n\t\t\t  Please enter Choice (Select 1 or 2 or 3)";
     cin>>choice;
 
     switch (choice)
@@ -63,11 +63,70 @@ void shopping :: menu(){
             exit(0);
         }
     default:
-        cout<<"Please enter valid choice (1 or 2 or 3)";
-        // break;
+        cout<<"Invalid choice";
     goto m;
     }
 
+}
+
+
+// this function is used by administrator to add modify and delete the product
+void shopping :: administrator(){
+    m:
+    int choice;
+    cout<<"\n\n\n\n\t\t\t____1. Add the product______|";
+    cout<<"\n\t\t\t                                  |";
+    cout<<"\n\n\n\n\t\t\t____2. Modify the product___|";
+    cout<<"\n\t\t\t                                  |";
+    cout<<"\n\n\n\n\t\t\t____3. Delete the product___|";
+    cout<<"\n\t\t\t                                  |";
+    cout<<"\n\n\n\n\t\t\t____4. Back the product_____|";
+    cout<<"\n\t\t\t                                  |";
+
+    cout<<"\n\n\t  Please enter Choice (Select 1 or 2 or 3 or 4)";
+    cin>>choice;
+
+    switch(choice){
+        case 1:
+            add();
+            break;
+        case 2:
+            edit();
+            break;
+        case 3:
+            rem();   // Remove function
+            break;
+        case 4:
+            menu();
+            break;
+        default:
+            cout<<"Invalid choice";
+    }
+    goto m;
+}
+
+void shopping :: buyer(){
+    m:
+    int choice;
+    cout<<"\t\t\t\t   Buyer        \n";
+    cout<<"\t\t\t\t________________\n";
+    cout<<"\t\t\t\t1. Buy product  \n";
+    cout<<"\t\t\t\t                \n";
+    cout<<"\t\t\t\t2. Go back      \n";
+
+    cout<<"\t\t\t  Please enter Choice (Select 1 or 2)";
+    cin>>choice;
+
+    switch(choice){
+        case 1:
+            receipt();
+            break;
+        case 2:
+            menu();
+        default:
+            cout<<"Invalid choice";
+    }
+    goto m;
 }
 
 // add function will add product and it details 
