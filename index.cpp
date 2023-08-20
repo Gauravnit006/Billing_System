@@ -94,7 +94,7 @@ void shopping :: administrator(){
             edit();
             break;
         case 3:
-            rem();   // Remove function
+            res();   // Remove function
             break;
         case 4:
             menu();
@@ -182,7 +182,67 @@ void shopping ::add(){
 
 }
 
+void shopping :: receipt(){
+    fstream data;
+    int arrc[100];   // array of product code
+    int arrq[100];   // array of quantity
+    char choice;
+    int c=0;   // counter
+    float amount = 0;
+    float dis = 0;   // discount
+    float total = 0;
 
+    cout<<"\n\n\t\t\t RECEIPT";
+    data.open("database.txt", ios::in);
+    if(!data){
+        cout<<"\n\n Empty database";
+    }
+    else{
+        data.close();
+
+        list();
+        cout<<"\n__________________________________\n";
+        cout<<"\n                                  \n";
+        cout<<"\n     Please place the order       \n";
+        cout<<"\n                                  \n";
+        cout<<"\n__________________________________\n";
+        
+        do{
+            m:
+            cout<<"\n\nEnter the product code : ";
+            cin>>arrc[c];
+            cout<<"\n\nEnter the product quantity : ";
+            cin>>arrq[c];
+            for(int i=0; i<c; ++i){
+                if(arrc[c] == arrc[i]){
+                    cout<<"\n\n Product code is duplicate. Please try again!!  ";
+                    goto m;
+                }
+            }
+            c++;
+            cout<<"\n\n Do you want to buy another product? If yes then press yes else no";
+            cin>>choice;
+        }while(choice == 'yes');
+        
+        cout<<"\n\n\t\t\t____________RECIPT____________\n";
+        cout<<"\nProduct No.\t Product quantity\tPrice\tAmount\tAmount with discount\n";
+        for(int i=0; i<c; ++i){
+            data.open("database.txt", ios::in);
+            data>>pcode>>pname>>price>>dis;
+            while(!data.eof()){
+                if(pcode == arrc[i]){
+                    amount = price*arrq[i];
+                    dis = amount - (amount*dis/100);
+                    total += dis;
+                    cout<<"\n"<<pcode<<"\t\t"<<pname<<"\t\t"<<arrq[i]<<"\t\t"<<price<<"\t\t"<<amount<<"\t\t"<<dis;
+                }
+            }
+            data.close();
+        }
+        cout<<"\n\n_________________________________";
+        cout<<"\n Total Amount : "<<total;
+    }
+}
 
 
 
