@@ -46,13 +46,13 @@ void shopping :: menu(){
     case 1:
         cout<<"\t\t\t Please Login \n";
         cout<<"\t\t\t Enter Email : ";
-        // cin>>email;
+        cin>>email;
         cout<<"\t\t\t Enter Password : ";
-        // cin>>password;
-        // if(email == "admin123@gmail.com" && password == "admin@123"){
-        //     administrator();
-        // }
-        administrator();
+        cin>>password;
+        if(email == "admin123@gmail.com" && password == "admin@123"){
+            administrator();
+        }
+        // administrator();
         cout<<"Invalid email or password !!";
         break;
     case 2:
