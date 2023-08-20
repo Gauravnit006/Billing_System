@@ -21,4 +21,31 @@ This is a Supermarket Billing Project implemented in C++ that allows administrat
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/supermarket-billing.git
+   git clone https://github.com/Gauravnit006/Billing_System.git
+
+## Usage
+- Directly run the index.exe file to use the software.
+
+### Administrator
+- Email - admin123@gmail.com
+- Password - admin@123
+- Log in as an administrator using your email and password.
+- Use the provided menu options to manage products (add, modify, delete).
+
+### Buyer
+  - Choose the "Buyer" option from the menu.
+  - Add products and specify quantities for purchase.
+  - The program will generate a bill with product details and total cost.
+
+# Authors
+- Gaurav
+  ```bash
+  https://github.com/Gauravnit006
+
+- Saurabh Rangdale
+ ```bash
+https://github.com/Saurabh-Rangdale12
+
+# Screenshots
+
+
