@@ -114,6 +114,19 @@ void shopping::res(){
 }
 
 
+void shopping::list(){
+    fstream data;
+    data.open("database.txt", ios::in);
+    cout<<"\n\n___________________________________________________\n";
+    cout<<"ProductNo\t\tName\t\tPrice\n";
+    cout<<"\n\n___________________________________________________\n";
+    data>>pcode>>pname>>price>>dis;
+    while(!data.eof()){
+        cout<<pcode<<"\t\t"<<pname<<"\t\t"<<price<<"\n";
+        data>>pcode>>pname>>price>>dis;
+    }
+    data.close();    
+}
 
 
 int main(){
