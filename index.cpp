@@ -363,8 +363,7 @@ void shopping :: receipt(){
 
 
 int main(){
-
-    // cout<<"change this code";
+    
     shopping s;
     s.menu();
 
