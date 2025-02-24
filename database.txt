@@ -3,4 +3,4 @@
  4 Charger 600 20
  2 soap 55 10
  8 wheat 40 15
-9 laptop 300 13
+9 laptop 300 11
