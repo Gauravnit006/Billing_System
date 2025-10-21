@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+// Message for testing purpose
 class shopping{
     int pcode;
     float price;
